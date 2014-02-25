@@ -1,0 +1,38 @@
+" grouping comannds by XXD
+augroup XXD
+  " clear all commands in XXD group
+  autocmd!
+
+  " binary=1 when open *.bin or run with -b option before file Read
+  autocmd BufReadPre *.bin let &binary=1
+
+  " if binary==1 then exec xxd with 1byte-mode
+  " set filetype = xxd binary
+  autocmd BufReadPost * if &binary | silent exec "%!xxd -g 1"
+  autocmd BufReadPost * set ft=xxd | endif
+
+  " if binary=1 then save as binary file
+  autocmd BufWritePre * if &binary | let s:saved_pos = getpos('.') | exec "%!xxd -r" | endif
+
+  " reload saved file
+  autocmd BufwritePost * if &binary | silent exec "%!xxd -g 1" | call setpos('.', s:saved_pos)
+  autocmd BufwritePost * set nomod | endif
+augroup END
+
+nnoremap <C-b> :call ToggleXXD()<CR>
+function! ToggleXXD()
+  if &ft == 'xxd'
+    silent exec "%!xxd -r"
+    if exists('b:ToggleXXD_old_ft')
+      let &ft=b:ToggleXXD_old_ft
+    else
+      let b:ToggleXXD_old_ft='vim'
+      let &ft=b:ToggleXXD_old_ft
+    endif
+  else
+    silent exec "%!xxd"
+    let b:ToggleXXD_old_ft=&ft
+    let &ft='xxd'
+  endif
+endfunction
+

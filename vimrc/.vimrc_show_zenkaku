@@ -1,0 +1,32 @@
+scriptencoding utf-8
+
+"set list
+"set listchars=trail:-
+
+"syntax match WideSpaces '　'
+"highlight WideSpaces cterm=underline ctermfg=red ctermbg=red guibg=red
+"
+"syntax match EOLSpaces '\s\+$'
+"highlight EOLSpaces cterm=underline ctermfg=red ctermbg=red guibg=red
+
+function! HighlightWideSpaces()
+  syntax match WideSpaces '　'
+  highlight WideSpaces cterm=underline ctermfg=red ctermbg=red guibg=red
+endf  
+
+function! HighlightEOLSpaces()
+  syntax match EOLSpaces '\s\+$'
+  highlight EOLSpaces cterm=underline ctermfg=red ctermbg=red guibg=red
+endf  
+
+function! HighlightSpaces()
+  call HighlightWideSpaces()
+  call HighlightEOLSpaces()
+endf
+
+"augroup HighlightSpaces
+"  autocmd! HighlightSpaces
+"
+"  autocmd WinEnter,BufEnter * call HighlightSpaces()
+"augroup END
+

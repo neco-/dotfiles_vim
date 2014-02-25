@@ -1,0 +1,27 @@
+vmap vg :call g:vgrep()<CR>
+
+function! g:vgrep()
+    let tmp = @@
+    silent normal gvy
+    let selected = @@
+    let @@ = tmp
+
+    let winname = 'vgrep_' . selected
+    let vgrep_bufnr = bufwinnr('^' . winname . '$')
+    if vgrep_bufnr > 0
+      execute vgrep_bufnr . "wincmd w"
+    else
+      execute "new " . winname
+      setlocal noswapfile
+      setlocal buftype=nofile
+      setlocal foldcolumn=0
+      setlocal nobuflisted
+      setlocal nospell
+      nnoremap <buffer> <silent> q :bd<CR>
+      let @/ = selected
+      nnoremap <buffer> <silent> <CR> 0gfn
+      let result = "r!grep -r --include=\"\*\.cpp\" --include=\"\*\.h\" " . selected . " ."
+      execute result
+    endif
+endfunction
+

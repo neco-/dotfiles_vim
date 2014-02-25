@@ -1,0 +1,48 @@
+" include and define
+nmap <silent> inc< i#include <><Esc>ha
+nmap <silent> inc> i#include <><Esc>ha
+nmap <silent> inc" i#include ""<Esc>ha
+nmap <silent> def i#define ()<Esc>ha
+
+"nmap <silent> main iint main(int argc, char **argv)<Cr>{<Cr><Tab><Cr><Cr><Tab>return 0;<Cr>}<Cr><Esc>kkkka
+nmap <silent> main iint<Cr>main(int argc, char **argv)<Cr>{<Cr><Cr><Cr>return 0;<Cr>}<Cr><Esc>kkkka<Tab>
+
+" atom
+" nmap <silent> atom i#define ATOM_LIST(NAME, DATA) NAME,<Esc>oconst uint32_t list[] = {<Esc>o#include "atom_list.def"<Esc>o};<Esc>o#undef ATOM_LIST
+
+" include guard
+nmap <silent> rfn o<C-r>%<Esc>F.d$<S-v>gU<C-v>$h"fddd
+nmap <silent> incg rfni#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
+" inoremap <Leader>rfn o<C-r>%<Esc>F.d$<S-v>gU<C-v>$h"fddd
+"nmap <silent> incg rfni#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
+"nmap <silent> i#include <>g2 o<C-r>%<Esc>F.r_$<S-v>gU<C-v>$h"fdddi#ifndef <C-r>f__<Cr>#define <C-r>f__<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
+
+" include guard(full path)
+nmap <silent> rfnp o<C-r>%<Esc>F.d$F/ld0<S-v>gU<C-v>$h"fddd
+"nmap <silent> igp rfnpi#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr>#endif<Esc>ka
+nmap <silent> incp rfnpi#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr><Esc><S-g>o#endif<Cr><Esc><C-o>ki
+
+" misc
+inoremap <Leader>date <C-R>=strftime('%Y/%m/%d %a')<CR>
+inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
+
+" brace
+nmap <silent> { a{<CR><CR>}<Esc>ki<Tab>
+nmap <silent> ( a()<Esc>i
+nmap <silent> dq a""<Esc>i
+
+" extern C
+nmap <silent> exc exs<CR><Esc>exekkkki
+nmap <silent> exs i#ifdef __cplusplus<CR>extern "C" {<CR>#endif<CR><Esc>
+nmap <silent> exe i#ifdef __cplusplus<CR>}<CR>#endif<CR><Esc>
+
+"inoremap {} {}<LEFT>
+"inoremap [] []<LEFT>
+"inoremap () ()<LEFT>
+"inoremap "" ""<LEFT>
+"inoremap '' ''<LEFT>
+"inoremap <> <><LEFT>
+
+" {}block select
+"nnoremap vb /{<CR>%v%0
+

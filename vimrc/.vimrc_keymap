@@ -1,0 +1,98 @@
+nmap <Esc><Esc> :nohlsearch<Cr><Esc>
+"inoremap <Esc> <Esc>:set iminsert=0<CR>
+
+" search
+nnoremap * *N
+
+" key assign for buffer
+cnoremap <C-A> <HOME>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+map <F2> :bp<CR>
+map <F3> :bn<CR>
+"nmap bl :ls<CR>:buf
+
+" misc functions
+"nmap <F3>  :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR><CR>
+map <F5> :source ~/.vimrc<CR>
+if has('win32unix')
+  map <F6> :!cygstart notepad++ %<CR>
+endif
+map <F7> :e %:h<CR>
+map <F8> 0y$:!svn diff <C-R>"<CR>
+
+" Don't use Ex mode, use Q for formatting
+"map Q gq
+
+" CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+command! Bd :call My_bd()
+function! My_bd()
+  " get current buffer number
+  let bd_num = bufnr("%")
+"  echo bd_num
+
+
+  " get window number list
+  let winnrs = range(1, winnr("$"))
+"  echo winnrs
+
+  " convert window number list to buffer number list
+  let bufnrs = map(winnrs, "winbufnr(v:val)")
+"  echo bufnrs
+
+  " how many buffers is it included
+  let is_include = count(bufnrs, bd_num)
+"  echo is_include
+
+  " current buffer is opened in only one window
+  if is_include == 1
+    " get before buffer number
+    let bd_num_before = bufnr("#")
+  "  echo bd_num_before
+  
+    " before buffer is listed
+    let bd_before_listed = buflisted(bd_num_before)
+    if bd_before_listed == 0
+      enew
+    else
+      silent exec "b " . bd_num_before
+    endif
+    silent exec "bd " . bd_num
+
+  " current buffer is opened in many window
+  else
+    let win_list = range(1, winnr("$"))
+    echo win_list
+
+    let cur_win_num = winnr()
+    let win_id_list = []
+    for win_id in win_list
+      let buf_id = winbufnr(win_id)
+      echo buf_id
+      if buf_id == bd_num
+        echo win_id
+        call add(win_id_list, win_id)
+        silent exec win_id . "wincmd w"
+
+        " get before buffer number
+        let bd_num_before = bufnr("#")
+
+        " before buffer is listed
+        let bd_before_listed = buflisted(bd_num_before)
+        if bd_before_listed == 0
+          enew
+        else
+          silent exec "b " . bd_num_before
+        endif
+        silent exec cur_win_num . "wincmd w"
+      endif
+    endfor
+    echo win_id_list
+    silent exec "bd " . bd_num
+  endif
+  unlet bd_num
+endfunction
+
