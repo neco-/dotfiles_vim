@@ -12,15 +12,15 @@ nmap <silent> main iint<Cr>main(int argc, char **argv)<Cr>{<Cr><Cr><Cr>return 0;
 
 " include guard
 nmap <silent> rfn o<C-r>%<Esc>F.d$<S-v>gU<C-v>$h"fddd
-nmap <silent> incg rfni#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
+nmap <silent> incg rfni#ifndef <C-r>f_H_<Cr>#define <C-r>f_H_<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
 " inoremap <Leader>rfn o<C-r>%<Esc>F.d$<S-v>gU<C-v>$h"fddd
-"nmap <silent> incg rfni#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
+"nmap <silent> incg rfni#ifndef <C-r>f_H_<Cr>#define <C-r>f_H_<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
 "nmap <silent> i#include <>g2 o<C-r>%<Esc>F.r_$<S-v>gU<C-v>$h"fdddi#ifndef <C-r>f__<Cr>#define <C-r>f__<Cr><Cr><Cr><Cr>#endif<Cr><Esc>kkka
 
 " include guard(full path)
 nmap <silent> rfnp o<C-r>%<Esc>F.d$F/ld0<S-v>gU<C-v>$h"fddd
-"nmap <silent> igp rfnpi#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr>#endif<Esc>ka
-nmap <silent> incp rfnpi#ifndef <C-r>f_H__<Cr>#define <C-r>f_H__<Cr><Cr><Esc><S-g>o#endif<Cr><Esc><C-o>ki
+"nmap <silent> igp rfnpi#ifndef <C-r>f_H_<Cr>#define <C-r>f_H_<Cr><Cr>#endif<Esc>ka
+nmap <silent> incp rfnpi#ifndef <C-r>f_H_<Cr>#define <C-r>f_H_<Cr><Cr><Esc><S-g>o#endif<Cr><Esc><C-o>ki
 
 " misc
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d %a')<CR>
