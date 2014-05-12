@@ -1,0 +1,17 @@
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+
+NeoBundle 'gtags.vim'
+NeoBundle 'monday'
+NeoBundle 'DrawIt'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/unite.vim'
+
+filetype plugin indent on
+
