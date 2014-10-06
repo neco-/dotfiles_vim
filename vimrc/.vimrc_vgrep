@@ -1,6 +1,6 @@
-vmap vg :call g:vgrep()<CR>
+vmap vg :call g:Vgrep()<CR>
 
-function! g:vgrep()
+function! g:Vgrep()
     let tmp = @@
     silent normal gvy
     let selected = @@

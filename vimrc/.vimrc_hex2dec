@@ -1,16 +1,16 @@
-nmap <Leader>hex :call g:hex_paste()<CR>
-nmap <Leader>dec :call g:dec_paste()<CR>
+nmap <Leader>hex :call g:Hex_paste()<CR>
+nmap <Leader>dec :call g:Dec_paste()<CR>
 "nmap hex :echo printf("%x", <C-R>")<CR>
 "nmap dec :echo printf("%d", <C-R>")<CR>
 
-function! g:hex_paste()
+function! g:Hex_paste()
     let num = expand("<cword>")
     let result = printf("0x%X", num)
     echo result
     execute "normal! ciw" . result
 endfunction
 
-function! g:dec_paste()
+function! g:Dec_paste()
     let num = expand("<cword>")
     let result = printf("%d", num)
     echo result

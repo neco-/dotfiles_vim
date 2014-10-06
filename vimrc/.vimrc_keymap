@@ -20,6 +20,7 @@ if has('win32unix')
 endif
 map <F7> :e %:h<CR>
 map <F8> 0y$:!svn diff <C-R>"<CR>
+map <F9> :enew<CR>:r!svn st -u \| grep "M "<CR>
 
 " Don't use Ex mode, use Q for formatting
 "map Q gq
