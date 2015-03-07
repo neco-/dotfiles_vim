@@ -1,5 +1,5 @@
 set nocompatible
-set hid
+set hidden
 
 set tabstop=4 shiftwidth=4 softtabstop=0
 set expandtab

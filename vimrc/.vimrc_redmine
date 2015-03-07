@@ -1,0 +1,6 @@
+" redmine
+let g:redmine_auth_site  = 'https://hoge.co.jp/redmine'
+let g:redmine_auth_key   = ''
+let g:redmine_author_id  = '1'
+let g:redmine_project_id = '1'
+let g:redmine_browser    = 'cygstart firefox.exe'

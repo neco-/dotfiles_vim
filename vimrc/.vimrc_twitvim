@@ -1,0 +1,5 @@
+" twitvim
+"let twitvim_proxy = "http://proxy.hoge.co.jp:10080/"
+let twitvim_old_retweet = 1
+let twitvim_enable_ruby = 1
+let twitvim_browser_cmd = 'cygstart firefox.exe'
