@@ -15,7 +15,8 @@ augroup XXD
   autocmd BufWritePre * if &binary | let s:saved_pos = getpos('.') | exec "%!xxd -r" | endif
 
   " reload saved file
-  autocmd BufwritePost * if &binary | silent exec "%!xxd -g 1" | call setpos('.', s:saved_pos)
+"  autocmd BufwritePost * if &binary | silent exec "%!xxd -g 1" | call setpos('.', s:saved_pos)
+  autocmd BufwritePost * if &binary | silent exec "e" | call setpos('.', s:saved_pos)
   autocmd BufwritePost * set nomod | endif
 augroup END
 

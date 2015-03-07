@@ -1,0 +1,19 @@
+" unite
+let g:unite_enable_split_vertically = 1
+"let g:unite_winwidth = 40
+
+" show buffers
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" show files in current dir
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" show registers
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" show recent files
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" show buffers and recent
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" show all unite
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+" show advent_calendar
+nnoremap <silent> ,ud :<C-u>Unite advent_calendar<CR>
+

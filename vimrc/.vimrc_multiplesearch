@@ -1,0 +1,7 @@
+function! SearchMultipleWord(...)
+  let @/ = '\(' . join(a:000, '\|') . '\)'
+  execute "normal! n"
+endfunction
+
+command! -nargs=+ MS :call SearchMultipleWord(<f-args>)
+

@@ -1,5 +1,6 @@
 nmap <Leader>hex :call g:Hex_paste()<CR>
 nmap <Leader>dec :call g:Dec_paste()<CR>
+vmap <Leader>calc :call g:Calc_paste()<CR>
 "nmap hex :echo printf("%x", <C-R>")<CR>
 "nmap dec :echo printf("%d", <C-R>")<CR>
 
@@ -15,5 +16,15 @@ function! g:Dec_paste()
     let result = printf("%d", num)
     echo result
     execute "normal! ciw" . result
+endfunction
+
+function! g:Calc_paste()
+    let tmp = @@
+    silent normal gvd
+    let selected = @@
+    let @@ = tmp
+    echo selected
+    let result = "normal! \"=" . selected . "\<C-M>p"
+    execute result
 endfunction
 

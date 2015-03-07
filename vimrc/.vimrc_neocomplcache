@@ -1,0 +1,5 @@
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+"imap <silent> <Tab> <Plu>(neocomplcache_snippets_expand)
+"smap <silent> <Tab> <Plu>(neocomplcache_snippets_expand)
+
