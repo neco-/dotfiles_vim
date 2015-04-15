@@ -1,5 +1,7 @@
 " import .vimrc
 source ~/.vim/vimrc/.vimrc_default
+source ~/.vim/vimrc/.vimrc_color
+source ~/.vim/vimrc/.vimrc_diff
 source ~/.vim/vimrc/.vimrc_register
 source ~/.vim/vimrc/.vimrc_keymap
 source ~/.vim/vimrc/.vimrc_tab
@@ -9,7 +11,7 @@ source ~/.vim/vimrc/.vimrc_binary
 source ~/.vim/vimrc/.vimrc_vgrep
 source ~/.vim/vimrc/.vimrc_hex2dec
 source ~/.vim/vimrc/.vimrc_func_list
-source ~/.vim/vimrc/.vimrc_multiplesearch 
+source ~/.vim/vimrc/.vimrc_multiplesearch
 source ~/.vim/vimrc/.vimrc_macro
 
 " import plugin settings

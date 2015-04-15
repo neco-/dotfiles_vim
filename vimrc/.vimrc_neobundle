@@ -17,8 +17,8 @@ NeoBundle 'git://github.com/mattn/webapi-vim.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive'
 NeoBundle 'git://github.com/toritori0318/vim-redmine.git'
 NeoBundle 'git://github.com/neco-/Bd.git'
-"NeoBundle 'git://github.com/neco-/ChatterVim'
-"NeoBundle 'git://github.com/vim-scripts/Align'
+NeoBundle 'git://github.com/neco-/ChatterVim'
+NeoBundle 'git://github.com/vim-scripts/Align'
 if v:version >= 702
   NeoBundle 'Shougo/vimshell'
   NeoBundle 'Shougo/vimproc',

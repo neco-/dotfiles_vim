@@ -24,9 +24,9 @@ function! HighlightSpaces()
   call HighlightEOLSpaces()
 endf
 
-"augroup HighlightSpaces
-"  autocmd! HighlightSpaces
-"
-"  autocmd WinEnter,BufEnter * call HighlightSpaces()
-"augroup END
+augroup HighlightSpaces
+  autocmd! HighlightSpaces
+
+  autocmd WinEnter,BufEnter * call HighlightSpaces()
+augroup END
 

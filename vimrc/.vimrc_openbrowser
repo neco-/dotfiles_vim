@@ -1,4 +1,7 @@
-let g:netrw_nogx = 1    " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
-
+if has('win32unix')
+  let g:netrw_nogx = 1    " disable netrw's gx mapping.
+  nmap gx <Plug>(openbrowser-smart-search)
+  vmap gx <Plug>(openbrowser-smart-search)
+else
+  let g:netrw_browsex_viewer = 'firefox'
+endif
