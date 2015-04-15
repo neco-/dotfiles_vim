@@ -1,0 +1,8 @@
+set complete=sl
+
+map <BS> <A-Left>
+
+nmap <Esc><Esc> :nohlsearch<Cr><Esc>
+
+inoremap <C-a> <Ins><C-a><Ins>
+
