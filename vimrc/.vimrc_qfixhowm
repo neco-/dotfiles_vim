@@ -10,4 +10,11 @@ let howm_fileformat    = 'unix'
 "let QFix_HeightMax     = 8
 
 let QFixHowm_FileType = 'qfix_memo'
+let QFixHowm_JpDayOfWeek = 0
+
+let QFixHowm_ShowSchedule     = 7
+let QFixHowm_ShowScheduleTodo = 1
+
+let QFixHowm_ScheduleSearchDir = howm_dir . '/schetodo'
+let QFixHowm_VimEnterCmd = 'y'
 
