@@ -1,4 +1,5 @@
-set complete=sl
+set toolbars=menu
+set complete=l
 
 map <BS> <A-Left>
 
