@@ -12,8 +12,6 @@ set number
 set ruler
 
 syntax on
-source ~/.vim/vimrc/.vimrc_show_zenkaku
-colorscheme default
 
 set history=1024
 set hlsearch

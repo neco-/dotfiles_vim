@@ -2,6 +2,7 @@
 source ~/.vim/vimrc/.vimrc_default
 source ~/.vim/vimrc/.vimrc_color
 source ~/.vim/vimrc/.vimrc_diff
+source ~/.vim/vimrc/.vimrc_show_zenkaku
 source ~/.vim/vimrc/.vimrc_register
 source ~/.vim/vimrc/.vimrc_keymap
 source ~/.vim/vimrc/.vimrc_tab

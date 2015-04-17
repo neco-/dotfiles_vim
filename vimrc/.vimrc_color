@@ -1,3 +1,6 @@
+colorscheme default
+
 set t_Co=256
+
 highlight Search    cterm=none ctermfg=232 ctermbg=11
 highlight IncSearch cterm=none ctermfg=232 ctermbg=11
