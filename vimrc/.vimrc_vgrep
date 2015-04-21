@@ -17,10 +17,11 @@ function! g:Vgrep()
       setlocal foldcolumn=0
       setlocal nobuflisted
       setlocal nospell
-      nnoremap <buffer> <silent> q :bd<CR>
       let @/ = selected
+      nnoremap <buffer> <silent> q :bd<CR>
       nnoremap <buffer> <silent> <CR> 0gfn
-      let result = "r!grep -r --include=\"\*\.cpp\" --include=\"\*\.h\" " . selected . " ."
+"      let result = "r!grep -r --include=\"\*\.cpp\" --include=\"\*\.h\" " . selected . " ."
+      let result = "r!grep -r --include=\"\*\.java\" " . selected . " ."
       execute result
     endif
 endfunction
