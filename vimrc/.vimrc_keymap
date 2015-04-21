@@ -10,7 +10,6 @@ cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
 map <F2> :bp<CR>
 map <F3> :bn<CR>
-"nmap bl :ls<CR>:buf
 
 " misc functions
 "nmap <F3>  :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR><CR>
@@ -19,8 +18,8 @@ if has('win32unix')
   map <F6> :!cygstart notepad++ %<CR>
 endif
 map <F7> :e %:h<CR>
-map <F8> 0y$:!svn diff <C-R>"<CR>
-map <F9> :enew<CR>:r!svn st -u \| grep "M "<CR>
+map <F8> 0y$:!git diff <C-R>"<CR>
+map <F9> :enew<CR>:r!git st -u \| grep "M "<CR>
 
 " Don't use Ex mode, use Q for formatting
 "map Q gq
