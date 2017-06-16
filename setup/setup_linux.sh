@@ -3,7 +3,10 @@
 #
 # make a symbolic link to dotfiles
 #
-ln -s .vimrc ~/.vimrc
+pushd ${HOME}
+  ln -s .vim/.vimrc .vimrc
+  ln -s .vim/.vimperatorrc .vimperatorrc
+popd
 
 #
 # make directories
