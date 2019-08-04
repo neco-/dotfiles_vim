@@ -26,4 +26,3 @@ source ~/.vim/vimrc/.vimrc_openbrowser
 source ~/.vim/vimrc/.vimrc_quickhl
 "source ~/.vim/vimrc/.vimrc_redmine
 "source ~/.vim/vimrc/.vimrc_twitvim
-

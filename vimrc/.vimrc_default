@@ -21,6 +21,8 @@ set smartindent
 "set iminsert=0
 "set imsearch=-1
 
+set visualbell t_vb=
+
 "set encoding=japan
 "set fileencodings=sjis
 set enc=utf-8
@@ -78,4 +80,3 @@ endif " has("autocmd")
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 endif
-

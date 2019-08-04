@@ -5,15 +5,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " when you'd like to access to git via ssh then set git-proxy.sh
-NeoBundle 'gtags.vim'
+"NeoBundle 'gtags.vim'
 NeoBundle 'monday'
 NeoBundle 'DrawIt'
 "NeoBundle 'TwitVim'
-NeoBundle 'https://github.com/mattn/webapi-vim.git'
+"NeoBundle 'https://github.com/mattn/webapi-vim.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive'
-NeoBundle 'https://github.com/toritori0318/vim-redmine.git'
+"NeoBundle 'https://github.com/toritori0318/vim-redmine.git'
 NeoBundle 'https://github.com/neco-/Bd.git'
-NeoBundle 'https://github.com/neco-/ChatterVim'
+"NeoBundle 'https://github.com/neco-/ChatterVim'
 NeoBundle 'https://github.com/vim-scripts/Align'
 if v:version >= 702
   NeoBundle 'Shougo/vimshell'
